@@ -1,0 +1,6 @@
+
+Preparing your environment
+--------------------------
+Run the ./setup script. This will download the RTI Connector API from
+the repository and create a python virtual environment
+
