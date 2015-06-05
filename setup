@@ -13,7 +13,7 @@ cp rticonnextdds-connector/rticonnextdds_connector.py $envdir/lib/python2.7/
 cp -R rticonnextdds-connector/lib/ $envdir/lib/python2.7/
 
 
-wget https://community.rti.com/rti-doc/510/ndds.5.1.0/doc/pdf/RTI_CoreLibrariesAndUtilities_QoS_Reference_Guide.pdf
+wget -P doc https://community.rti.com/rti-doc/510/ndds.5.1.0/doc/pdf/RTI_CoreLibrariesAndUtilities_QoS_Reference_Guide.pdf
 
 echo "In order to run the tutorial examples, use the following command in every terminal"
 echo ""
