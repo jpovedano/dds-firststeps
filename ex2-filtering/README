@@ -1,0 +1,31 @@
+Filtering Data Connector
+--------------------------------------------------------------------------------
+
+- Run the console (Subscriber application)
+	./console.py
+
+- Run ./sensor (Publisher application)
+	./sensor.py
+
+
+Content filter
+-------------
+
+- Copy the following text under the <data_reader> tagin Tutorial.xml
+
+	<filter name="TempThreshold" kind="builtin.sql">
+	  <expression> value > 50 </expression>
+	</filter>
+
+
+Time Based Filtering
+--------------------
+
+- Copy the following text inside the datareader_qos tag in Tutorial.xml
+
+	<time_based_filter>
+	  <minimum_separation>
+	    <sec>5</sec>
+  	  </minimum_separation>
+	</time_based_filter>
+
