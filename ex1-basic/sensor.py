@@ -40,7 +40,7 @@ if __name__ == '__main__':
         writer.instance.setNumber('value', sensor.value)
         writer.instance.setNumber('timestamp', sensor.timestamp)
 
-        print "Updating sensor {id} value: {value}".format(id=sensor.id, value=sensor.value)
+        print "[{ts}] Updating sensor {id} value: {value}".format(ts=sensor.timestamp,id=sensor.id, value=sensor.value)
         writer.write()
         time.sleep(1)
 
