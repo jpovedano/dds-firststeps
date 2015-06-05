@@ -15,8 +15,7 @@ conn = rti.Connector("MyParticipantLibrary::Console", 'Tutorial.xml')
 reader = conn.getInput("TempSubscriber::TempReader")
 
 while 1:
-    
-    reader.read()
+    reader.take()
 
     print_header()
 
