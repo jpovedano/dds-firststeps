@@ -1,1 +1,28 @@
-Basic Publish Subscribe
+Basic Publish Subscribe with Connector
+
+- Run the console (Subscriber application)
+	./console.py
+
+- Run ./sensor (Publisher application)
+	./sensor.py
+
+- Run another sensor instance with a different identifier
+	./sensor.py --id 1
+
+
+Read vs. Take
+-------------
+By default our example uses the take API to get the samples from the middleware. 
+In this mode the samples are removed from the local cache
+
+
+- Exchange take() with read() in console.py
+- Add the following lines INSIDE the datareader_qos tag in Tutorial.xml
+   ...
+   <datareader_qos>
+        <history>
+	   <depth>10</depth>
+	</history>
+   <datareader_qos>
+
+- Spot the differences :)
