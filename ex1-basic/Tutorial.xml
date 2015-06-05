@@ -20,6 +20,11 @@
           <mask> SHMEM</mask>
         </transport_builtin>
       </participant_qos>
+
+      <datareader_qos>
+	<!-- Modify reader values here -->
+      </datareader_qos>
+
     </qos_profile>
   </qos_library>
 
@@ -28,6 +33,7 @@
     <struct name="Sensor" extensibility="extensible">
       <member name="id" stringMaxLength="128" id="0" type="string" key="true"/>
       <member name="value" id="1" type="long"/>
+      <member name="timestamp" id="2" type="long"/>
     </struct>
   </types>
 
