@@ -1,0 +1,12 @@
+High availability techniques
+--------------------------------------------------------------------------------
+
+- Run the console (Subscriber application)
+	./console.py
+
+- Run a primary ./sensor (Publisher application)
+	./sensor.py --id 0
+
+- Run a secondary ./sensor (Publisher application)
+	./sensor.py --id 0 --secondary
+
