@@ -15,6 +15,7 @@ conn = rti.Connector("MyParticipantLibrary::Console", 'Tutorial.xml')
 reader = conn.getInput("TempSubscriber::TempReader")
 
 while 1:
+    reader.wait(5000)
     reader.read()
 
     print_header()
@@ -25,4 +26,3 @@ while 1:
             s = reader.samples.getDictionary(i)
             print "{id: <10} {val: <10} {ts: <10}".format(id=s["id"],val=s["value"],ts=s["timestamp"])
 
-    time.sleep(1)
