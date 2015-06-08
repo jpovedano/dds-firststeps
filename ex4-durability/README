@@ -1,12 +1,20 @@
-High availability techniques
+Late joiners
 --------------------------------------------------------------------------------
 
-- Run the console (Subscriber application)
-	./console.py
-
-- Run a primary ./sensor (Publisher application)
+- Run a ./sensor (Publisher application)
 	./sensor.py --id 0
 
-- Run a secondary ./sensor (Publisher application)
-	./sensor.py --id 0 --secondary
+- Wait for 10 seconds and run the console (Subscriber application)
+	./console.py
+
+- Look at the behavior
+
+- Uncomment the code under datareader_qos and datawriter_qos. 
+  Restart the publisher and subscriber
+
+- Look at the behavior
+
+
+- Try changing history kind to KEEP_LAST_HISTORY_QOS and history/depth to 10
+What are the differences?
 
