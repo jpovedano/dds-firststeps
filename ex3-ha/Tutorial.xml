@@ -41,11 +41,7 @@
     <domain_participant name="Console" domain_ref="MyDomainLibrary::MyDomain">
       <subscriber name="TempSubscriber">
         <data_reader name="TempReader" topic_ref="Temperature">
-          <!-- Content based filtering
-	  <filter name="TempThreshold" kind="builtin.sql">
-	    <expression> value > 50 </expression>
-  	  </filter>
-	  -->
+          <!-- OWNERSHIP
           <datareader_qos>
             <reliability>
               <kind>RELIABLE_RELIABILITY_QOS</kind>
@@ -60,6 +56,7 @@
               </lease_duration>
             </liveliness>
           </datareader_qos>
+	  END OWNERSHIP -->
         </data_reader>
       </subscriber>
     </domain_participant>
@@ -67,6 +64,7 @@
       <publisher name="TempPublisher">
         <!-- Primary Sensor -->
         <data_writer name="TempWriterPrimary" topic_ref="Temperature">
+	  <!-- OWNERSHIP
           <datawriter_qos>
             <reliability>
               <kind>RELIABLE_RELIABILITY_QOS</kind>
@@ -84,9 +82,11 @@
               </lease_duration>
             </liveliness>
           </datawriter_qos>
+	  OWNERSHIP -->
         </data_writer>
         <!-- Secondary Sensor -->
         <data_writer name="TempWriterSecondary" topic_ref="Temperature">
+	  <!-- OWNERSHIP 
           <datawriter_qos>
             <reliability>
               <kind>RELIABLE_RELIABILITY_QOS</kind>
@@ -104,6 +104,7 @@
               </lease_duration>
             </liveliness>
           </datawriter_qos>
+	  END OWNERSHIP -->
         </data_writer>
       </publisher>
     </domain_participant>
