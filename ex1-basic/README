@@ -1,4 +1,5 @@
 Basic Publish Subscribe with Connector
+--------------------------------------------------------------------------------
 
 - Run the console (Subscriber application)
 	./console.py
