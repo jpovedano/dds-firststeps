@@ -17,6 +17,7 @@ Content filter
 	  <expression> value > 50 </expression>
 	</filter>
 
+- Restart the console 
 
 Time Based Filtering
 --------------------
@@ -29,3 +30,4 @@ Time Based Filtering
   	  </minimum_separation>
 	</time_based_filter>
 
+- Restart the console 
