@@ -1,20 +1,39 @@
-Isolation 
+Isolation using Partitions
 --------------------------------------------------------------------------------
+In some scenarios we may want to create logical divisions of the data space, so 
+publishers talks only to a set of subscribers. For this purpose we use the 
+'partition' QoS. With this QoS, Publishers only will talk to Subscribers 
+only if their partitions match.
 
-- Run a ./sensor (Publisher application)
+Imagine an scenario where there are thousands of geographically distributed 
+temperature sensors. If the user creates a temperature subscription in this scenario,
+the application will receive updates from all of them. However, the user
+might be only interested only in the sensors in a certain region. If we add
+geographical information to publishers by defining a partition, the subscriber
+application can decide which areas he wants to receive updates from.
+
+Partitions are defined at the Publisher/Subscriber level, and they
+allow the use of pattern matching to select multiple partitions at the same time.
+
+More info at: https://community.rti.com/examples/partitions
+
+Run the example
+--------------- 
+
+- Run a ./sensor (Publisher application in partition ZONE-A)
 	./sensor.py --id 0 --zone A
 
-- Run a ./sensor in zone B (Publisher application)
+- Run a ./sensor in zone B (Publisher application in partition ZONE-B)
 	./sensor.py --id 1 --zone B
 
-- Run the console (Subscriber application)
+- Run the console (Subscriber application in all partitions)
 	./console.py
 
 At this point, measurements from both sensors should be shown
-in the console application
+in the console application, as the consol
 
 - Stop the console application. Don't stop the sensor applications
 
 - Set the subscriber_qos/partition/name/element to 'ZONE-A'
 
-- Start the console application again. What are the differences?
+- Start the console application again. Spot the differences from previous run
