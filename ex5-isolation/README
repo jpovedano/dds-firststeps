@@ -1,0 +1,20 @@
+Isolation 
+--------------------------------------------------------------------------------
+
+- Run a ./sensor (Publisher application)
+	./sensor.py --id 0 --zone A
+
+- Run a ./sensor in zone B (Publisher application)
+	./sensor.py --id 1 --zone B
+
+- Run the console (Subscriber application)
+	./console.py
+
+At this point, measurements from both sensors should be shown
+in the console application
+
+- Stop the console application. Don't stop the sensor applications
+
+- Set the subscriber_qos/partition/name/element to 'ZONE-A'
+
+- Start the console application again. What are the differences?
