@@ -41,22 +41,26 @@
     <domain_participant name="Console" domain_ref="MyDomainLibrary::MyDomain">
       <subscriber name="TempSubscriber">
         <data_reader name="TempReader" topic_ref="Temperature">
+	   <!--
 	   <datareader_qos>
 	    <reliability><kind>RELIABLE_RELIABILITY_QOS</kind></reliability>
 	    <history><kind>KEEP_ALL_HISTORY_QOS</kind></history>
 	    <durability><kind>TRANSIENT_LOCAL_DURABILITY_QOS</kind></durability>
 	   </datareader_qos>
+	   -->
         </data_reader>
       </subscriber>
     </domain_participant>
     <domain_participant name="Sensor" domain_ref="MyDomainLibrary::MyDomain">
       <publisher name="TempPublisher">
         <data_writer name="TempWriter" topic_ref="Temperature">
+	  <!--
           <datawriter_qos>
 	    <reliability><kind>RELIABLE_RELIABILITY_QOS</kind></reliability>
 	    <history><kind>KEEP_ALL_HISTORY_QOS</kind></history>
 	    <durability><kind>TRANSIENT_LOCAL_DURABILITY_QOS</kind></durability>
           </datawriter_qos>
+	  -->
         </data_writer>
       </publisher>
     </domain_participant>

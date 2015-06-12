@@ -1,19 +1,30 @@
 Late joiners
 --------------------------------------------------------------------------------
 
+In certain scenarios a suscriber application might be interested of receiving 
+samples that were sent before starting. Another case is when the subscriber application
+crashed and wants to restart from the latest state. This can be achieved by using the 
+'durability' and 'history' QoS.
+
+In this example, we are going to show how to receive samples that were published before the subscriber application
+
+
+Run the example
+--------------------------------------------------------------------------------
+
 - Run a ./sensor (Publisher application)
 	./sensor.py --id 0
 
 - Wait for 10 seconds and run the console (Subscriber application)
 	./console.py
 
-- Look at the behavior
+- Look at the behavior. Only the samples that are sent after starting the application
+  were received.
 
 - Uncomment the code under datareader_qos and datawriter_qos. 
   Restart the publisher and subscriber
 
 - Look at the behavior
-
 
 - Try changing history kind to KEEP_LAST_HISTORY_QOS and history/depth to 10
 What are the differences?
