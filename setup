@@ -1,16 +1,30 @@
 #/bin/bash
 
-envdir=rticonnectorenv
+
+# Python virtual environment directory
+PENVDIR=DDSTUTORIALENV
+
+function InstallVirtualEnv {
+	curl -O https://pypi.python.org/packages/source/v/virtualenv/virtualenv-1.9.tar.gz
+	tar -zxvf virtualenv-1.9.tar.gz
+	python virtualenv-1.9/virtualenv.py $PENVDIR 
+}
+
+echo "--------------------------------------------------------------------------------" 
+echo ""
+echo " First Steps with Data Distribution Service Tutorial Setup"
+echo ""
+echo "--------------------------------------------------------------------------------" 
+
+
+echo "Preparing virtualenv..."
+command virtualenv $PENVDIR >/dev/null 2>&1 || InstallVirtualEnv
+
 
 # First, clone the repository from github
 git clone https://github.com/rticommunity/rticonnextdds-connector.git
-
-
-echo "Preparing enviornment..."
-virtualenv $envdir
-
-cp rticonnextdds-connector/rticonnextdds_connector.py $envdir/lib/python2.7/
-cp -R rticonnextdds-connector/lib/ $envdir/lib/python2.7/
+cp rticonnextdds-connector/rticonnextdds_connector.py $PENVDIR/lib/python2.7/
+cp -R rticonnextdds-connector/lib/ $PENVDIR/lib/python2.7/
 
 
 wget -P doc https://community.rti.com/rti-doc/510/ndds.5.1.0/doc/pdf/RTI_CoreLibrariesAndUtilities_QoS_Reference_Guide.pdf
