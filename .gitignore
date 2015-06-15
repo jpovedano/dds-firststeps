@@ -1,2 +1,6 @@
 rticonnectorenv/
 rticonnextdds-connector/
+doc/
+virtualenv-1.9/
+virtualenv-1.9.tar.gz
+DDSTUTORIALENV/
