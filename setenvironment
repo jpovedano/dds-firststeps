@@ -1,2 +1,2 @@
 #!/bin/bash
-. rticonnectorenv/bin/activate
+. DDSTUTORIALENV/bin/activate
