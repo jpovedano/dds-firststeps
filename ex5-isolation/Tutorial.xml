@@ -44,7 +44,7 @@
         <subscriber_qos>
           <partition>
             <name>
-              <element>ZONE-A</element>
+              <element>*</element>
             </name>
           </partition>
         </subscriber_qos>
