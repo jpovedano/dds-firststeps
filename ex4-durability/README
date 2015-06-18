@@ -6,7 +6,10 @@ samples that were sent before starting. Another case is when the subscriber appl
 crashed and wants to restart from the latest state. This can be achieved by using the 
 'durability' and 'history' QoS.
 
-In this example, we are going to show how to receive samples that were published before the subscriber application
+In this example, we are going to show how to receive samples that were 
+published before the subscriber application. For this purpose we will learn:
+
+- How to use the reliability, history and durability QoS to implement late-joiner notification
 
 
 Run the example
@@ -22,7 +25,8 @@ Run the example
   were received.
 
 - Uncomment the code under datareader_qos and datawriter_qos. 
-  Restart the publisher and subscriber
+  Restart the publisher and subscriber. Remember to wait 10 seconds after starting the publisher
+  to start the subscriber
 
 - Look at the behavior
 
