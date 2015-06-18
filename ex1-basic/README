@@ -1,6 +1,15 @@
 Basic Publish Subscribe with Connector
 --------------------------------------------------------------------------------
 
+In this example we are going to learn the basics of publish subscribe with DDS. 
+We will go learn the following concepts:
+
+- How to publish and to subscribe to data
+- Change the QoS settings 
+
+Running the example
+--------------------------------------------------------------------------------
+
 - Run the console (Subscriber application)
 	./console.py
 
@@ -11,13 +20,16 @@ Basic Publish Subscribe with Connector
 	./sensor.py --id 1
 
 
+Note: If you want to execute your examples in a different Domdin ID change the domain_id attribute
+on Tutorial.xml to a different integer value.
+
 Read vs. Take
--------------
+--------------------------------------------------------------------------------
 By default our example uses the take API to get the samples from the middleware. 
 In this mode the samples are removed from the local cache
 
-
 - Exchange take() with read() in console.py
+
 - Add the following lines INSIDE the datareader_qos tag in Tutorial.xml
    ...
    <datareader_qos>

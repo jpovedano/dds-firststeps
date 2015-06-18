@@ -1,11 +1,25 @@
 Filtering Data Connector
 --------------------------------------------------------------------------------
 
+Subscribers are sometimes interested only in subset of the data being published
+in the system. For instance, we may want to receive updates only if a certain
+threshold is reached. For this purpose, DDS provides a QoS settings to configure
+which data should be received by subscribers. In this example we will learn:
+
+- How to filter data by their content
+- How to specify a minimum separation between updates 
+
+
+Running the example:
+--------------------
+
 - Run the console (Subscriber application)
 	./console.py
 
 - Run ./sensor (Publisher application)
 	./sensor.py
+
+- Verify that you receive all the sensor updates
 
 
 Content filter
@@ -17,12 +31,13 @@ Content filter
 	  <expression> value > 50 </expression>
 	</filter>
 
-- Restart the console 
+- Restart the console and spot the differences 
 
 Time Based Filtering
 --------------------
 
-- Copy the following text inside the datareader_qos tag in Tutorial.xml
+- Copy the following text inside the datareader_qos tag in Tutorial.xml. 
+  Remember to remove the text added in the previous exercise
 
 	<time_based_filter>
 	  <minimum_separation>
@@ -30,4 +45,4 @@ Time Based Filtering
   	  </minimum_separation>
 	</time_based_filter>
 
-- Restart the console 
+- Restart the console and spot the differences

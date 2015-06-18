@@ -1,6 +1,20 @@
 High availability techniques
 --------------------------------------------------------------------------------
 
+In some scenarios it is important to have some level of robustness and fault 
+tolerance. For instance, if a publisher application fails or crashes, we may 
+need a mechanism to still continue receiving updates from a backup publisher 
+application. To achieve that we have to detect that an application has failed
+and start receiving updates from backup publishers with lower priority.
+In this example we will learn to:
+
+- Use the Liveliness and Ownership QoS to detect node failures
+   and fault tolerance mechanisms.
+
+
+Running the example
+--------------------------------------------------------------------------------
+
 - Run the console (Subscriber application)
 	./console.py
 
@@ -10,3 +24,12 @@ High availability techniques
 - Run a secondary ./sensor (Publisher application)
 	./sensor.py --id 0 --secondary
 
+- At this point you will be receiving updates from BOTH the sensors at the same time
+
+- Stop the console and sensor application
+
+- Uncomment the code enclosed within the OWNERSHIP label.
+
+- Re-start the console and sensor applications using the same parameters
+
+- Spot the differences

@@ -23,6 +23,18 @@ The script performs the following tasks:
 - Create a python virtual environment under rticonnectorenv/
 - Installs the RTI Connector in the rticonnectorenv environment
 
+
+
+Running the exercises
+---------------------
+To avoid requiring administrator rights to install RTI Connector in
+your system, the examples are prepared to be run using a python virtual
+environment. For this reason, it is important to run the following command
+in each terminal window you open before running the scripts:
+
+  source rticonnectorenv/bin/activate
+
+
 Exercises
 -------------------------
 This tutorial contans the following exercises
@@ -36,15 +48,11 @@ This tutorial contans the following exercises
 - ex4-durability: Late Joiners
 - ex5-isolation: Partitioning/Isolation
 
-Running the exercises
----------------------
-To avoid requiring administrator rights to install RTI Connector in
-your system, the examples are prepared to be run using a python virtual
-environment. For this reason, it is important to run the following command
-in each terminal window you open before running the scripts:
+All the examples have the same structure: 
 
-  source rticonnectorenv/bin/activate
+- Tutorial.xml: A XML file where the system and QoS are defined
+- sensor.py: A publisher application that publish sensor data
+- console.py: A subscriber application that prints the information published using DDS
 
-
-
+Follow the instructions in the README file of each exercise
 
