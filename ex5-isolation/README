@@ -37,3 +37,5 @@ in the console application
 - Set the subscriber_qos/partition/name/element to 'ZONE-A'
 
 - Start the console application again. Spot the differences from previous run
+
+- Implement a new ZONE-C and make the console to receive examples from ZONE-A and ZONE-C
