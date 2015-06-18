@@ -30,7 +30,7 @@ Run the example
 	./console.py
 
 At this point, measurements from both sensors should be shown
-in the console application, as the consol
+in the console application
 
 - Stop the console application. Don't stop the sensor applications
 
