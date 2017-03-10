@@ -23,7 +23,7 @@ command virtualenv $PENVDIR >/dev/null 2>&1 || InstallVirtualEnv
 
 # First, clone the repository from github
 git clone https://github.com/rticommunity/rticonnextdds-connector.git
-cp rticonnextdds-connector/rticonnextdds_connector.py $PENVDIR/lib/python2.7/
+cp -R rticonnextdds-connector/rticonnextdds_connector $PENVDIR/lib/python2.7/
 cp -R rticonnextdds-connector/lib/ $PENVDIR/lib/python2.7/
 
 
